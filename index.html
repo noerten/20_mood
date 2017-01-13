@@ -1,22 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <title>Настроение</title>
-  <script id="quotes_json" type="application/json">
-    [
-      {
-        "phrase": "Кукурузные хлопья - теперь без асбеста!",
-        "signature": "©Неизвестный маркетолог"
-      },
-      {
-        "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
-      },
-      {
-        "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
-      }
-    ]
-  </script>
 </head>
 <body>
+
+  <div class="container">
+  	<div class='row'>
+      <div class="col-xs-12">
+        <h1>Возвращайся за новыми фразами</h1>
+        <hr>
+      </div>
+    </div>
+  	<div class='row'>
+  	  <div class="col-xs-12">
+  	  <blockquote>
+				<p id='joke'></p>
+				<footer id='signature'>
+				</footer>
+  	  </blockquote>
+  	  </div>
+  	</div>
+	</div>
+	<script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script id="quotes_json" type="application/json">
+		[
+		 {
+		  "phrase": "Кукурузные хлопья - теперь без асбеста!",
+		  "signature": "©Неизвестный маркетолог"
+		 },
+		 {
+		  "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
+		 },
+		 { 
+		  "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
+		 }
+		]
+		</script>
+		<script>
+		$(document).ready(function(){
+			var items = JSON.parse($("#quotes_json").html());
+		  var item = items[Math.floor(Math.random()*items.length)];
+			$("#joke").text(item.phrase);
+			if (typeof item.signature !== 'undefined') {
+				$("#signature").text(item.signature);
+			}
+			else {
+				$("#signature").remove();
+			}
+		});
+  	</script>
 </body>
 </html>

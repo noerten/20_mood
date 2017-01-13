@@ -1,6 +1,10 @@
 # Site for the Mood
 
-[TODO. There will be project description]
+The page shows randomly one of jokes. You can check it here [here](https://noerten.github.io/20_mood/).
+
+## How To Use
+
+Just open index.html
 
 # Project Goals
 
