@@ -1,6 +1,6 @@
 # Site for the Mood
 
-The page shows randomly one of jokes. You can check it here [here](https://noerten.github.io/20_mood/).
+The page shows randomly one of jokes. You can check it [here](https://noerten.github.io/20_mood/).
 
 ## How To Use
 
