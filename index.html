@@ -10,7 +10,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <style type="text/css">
-    #result {
+    .result {
       color: #524f4e;
     }
 
@@ -19,7 +19,7 @@
       text-align: center;
     }
 
-    #result {
+    .result {
       margin: 1em auto;
       padding: 20px;
         
@@ -29,7 +29,7 @@
       position: relative;
     }
 
-    #result blockquote {
+    .result blockquote {
       position: relative;
         
       background: #fff;
@@ -41,14 +41,14 @@
         -5px -4px 25px rgba(0, 0, 0, 0.3);
     }
 
-    #signature {
+    .signature {
       padding: 0;
       margin: 0;
         
       font-style: italic;
     }
 
-    #result blockquote p {
+    .result blockquote p {
       line-height: 2.5em;
       text-align: left;
       font-style: italic;
@@ -59,7 +59,7 @@
       position: relative;
     }
 
-    #result blockquote p:before{
+    .result blockquote p:before{
       content: '\201C';
       font-family: serif;
       font-style: normal;
@@ -72,7 +72,7 @@
       text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
     }
 
-    #result .attribution {
+    .result .attribution {
       text-align: right;
       padding: 20px 100px 20px 20px;
       position: relative;
@@ -82,7 +82,7 @@
 </head>
 
 <body>
-  <div id=result class="container">
+  <div class='result' class="container">
     <div class='row'>
       <div class="col-xs-12">
         <h1>Возвращайся за новыми фразами</h1>
@@ -95,7 +95,7 @@
           <p id='joke'></p>
         </blockquote>
         <div class="attribution">
-          <p id="signature"></p>
+          <p class="signature"></p>
         </div>
       </div>
     </div>
