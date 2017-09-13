@@ -4,177 +4,173 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <style type="text/css">
+    #result {
+      color: #524f4e;
+    }
 
-#result {
-    color: #524f4e;
-}
+    body {
+      background-color: rgba(252, 237, 202, 0.4); 
+      text-align: center;
+    }
 
-body {
-    background-color: rgba(252, 237, 202, 0.4); 
-    text-align: center;
-}
+    #result {
+      margin: 1em auto;
+      padding: 20px;
+        
+      height: auto;
+      width: 500px;
+        
+      position: relative;
+    }
 
-#result {
-    margin: 1em auto;
-    padding: 20px;
-    
-    height: auto;
-    width: 500px;
-    
-    position: relative;
-}
+    #result blockquote {
+      position: relative;
+        
+      background: #fff;
+      padding: 30px;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 
+        inset 0 2px 0 rgba(252, 237, 202, 0.1),
+        -5px -4px 25px rgba(0, 0, 0, 0.3);
+    }
 
-#result blockquote {
-    position: relative;
-    
-    background: #fff;
-	padding: 30px;
-    border: 0;
-	border-radius: 5px;
-	box-shadow: 
-		inset 0 2px 0 rgba(252, 237, 202, 0.1),
-		-5px -4px 25px rgba(0, 0, 0, 0.3);
-}
+    #signature {
+      padding: 0;
+      margin: 0;
+        
+      font-style: italic;
+    }
 
-#signature {
-    padding: 0;
-    margin: 0;
-    
-	font-style: italic;
-}
+    #result blockquote p {
+      line-height: 2.5em;
+      text-align: left;
+      font-style: italic;
+      font-size: 1.1em;
+      font-weight: 600;
+      text-indent: 100px;
+        
+      position: relative;
+    }
 
-#result blockquote p {
-	line-height: 2.5em;
-    text-align: left;
-	font-style: italic;
-    font-size: 1.1em;
-    font-weight: 600;
-    text-indent: 100px;
-    
-	position: relative;
-}
+    #result blockquote p:before{
+      content: '\201C';
+      font-family: serif;
+      font-style: normal;
+      font-weight: 700;
+      position: absolute;
+      font-size: 10em;
+      top: 0px;
+      left: -105px;
+      color: rgba(0, 0, 0, 0.6);
+      text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
+    }
 
-#result blockquote p:before{
-	content: '\201C';
-	font-family: serif;
-	font-style: normal;
-	font-weight: 700;
-	position: absolute;
-	font-size: 10em;
-	top: 0px;
-	left: -105px;
-	color: rgba(0, 0, 0, 0.6);
-	text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
-}
-
-#result .attribution {
-	text-align: right;
-	padding: 20px 100px 20px 20px;
-	position: relative;
-}
-
-  </style>	
+    #result .attribution {
+      text-align: right;
+      padding: 20px 100px 20px 20px;
+      position: relative;
+    }
+  </style>  
   <title>Настроение</title>
 </head>
-<body>
 
+<body>
   <div id=result class="container">
-  	<div class='row'>
+    <div class='row'>
       <div class="col-xs-12">
         <h1>Возвращайся за новыми фразами</h1>
         <hr>
       </div>
     </div>
-  	<div class='row'>
-  	  <div class="col-xs-12">
-  	  <blockquote>
-				<p id='joke'></p>
-  	  </blockquote>
-    <div class="attribution">
-        <p id="signature"></p>
+    <div class='row'>
+      <div class="col-xs-12">
+        <blockquote>
+          <p id='joke'></p>
+        </blockquote>
+        <div class="attribution">
+          <p id="signature"></p>
+        </div>
+      </div>
     </div>
-</div>
-
-  	  </div>
-  	</div>
-	</div>
-	<script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </div>
+  <script   src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script id="quotes_json" type="application/json">
-		[
-		 {
-		  "phrase": "Кукурузные хлопья - теперь без асбеста!",
-		  "signature": "©Неизвестный маркетолог"
-		 },
-		 {
-		  "phrase": "Если вашего ухода никто не заметил, скорее всего, вы ушли не зря.",
-		  "signature": "©Л.Н. Толстой"
-		 },	 
-		 {
-		  "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
-		 },
-		 {
-		  "phrase": "Защитил диплом. Еще вчера я был студентом, а сегодня уже безработный."
-		 },
-		 {
-		  "phrase": "Ну не приживается у нас асфальт! Отвергает его земля российская..."
-		 },
-		 {
-		  "phrase": "Идеальное утро это когда встал, умылся, выпил чашечку кофе и ... остался дома..."
-		 },
-		 { 
-		  "phrase": "И почему Ной не убил тогда тех двух комаров?"
-		 },
-		 { 
-		  "phrase": "Не мешайте людям думать о вас так, как им хочется. Может это для них — утешение."
-		 },
-		 { 
-		  "phrase": "согласитесь, сейчас человеку можно надоесть даже очень хорошим отношением к нему"
-		 },
-		 { 
-		  "phrase": "Когда дед задул 90 свечей с первого раза, внуки поняли, что трёшка в центре Москвы освободится не скоро."
-		 },
-		 { 
-		  "phrase": "Самое трудное по утрам - это не уснуть после того, как выключишь будильник"
-		 },
-		 { 
-		  "phrase": "Быть мальчиком - вопрос пола. Быть мужчиной - вопрос возраста. Быть джентльменом - вопрос выбора. Быть мудаком - вообще не вопрос."
-		 },
-		 { 
-		  "phrase": "Институт научил меня многому — я научился врать так, что сам верю в то, что говорю"
-		 },
-		 { 
-		  "phrase": "В Деда Мороза верится больше, чем в работу по специальности."
-		 },
-		 { 
-		  "phrase": "Счастье это когда завидуют, а нагадить не могут"
-		 },
-		 { 
-		  "phrase": "Твои мысли - единственная причина того, что происходит и единственный способ дальнейших изменений"
-		 },
-		 { 
-		  "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
-		 }
+    [
+     {
+      "phrase": "Кукурузные хлопья - теперь без асбеста!",
+      "signature": "©Неизвестный маркетолог"
+     },
+     {
+      "phrase": "Если вашего ухода никто не заметил, скорее всего, вы ушли не зря.",
+      "signature": "©Л.Н. Толстой"
+     },  
+     {
+      "phrase": "Собираюсь жить вечно, пока всё идёт нормально"
+     },
+     {
+      "phrase": "Защитил диплом. Еще вчера я был студентом, а сегодня уже безработный."
+     },
+     {
+      "phrase": "Ну не приживается у нас асфальт! Отвергает его земля российская..."
+     },
+     {
+      "phrase": "Идеальное утро это когда встал, умылся, выпил чашечку кофе и ... остался дома..."
+     },
+     { 
+      "phrase": "И почему Ной не убил тогда тех двух комаров?"
+     },
+     { 
+      "phrase": "Не мешайте людям думать о вас так, как им хочется. Может это для них — утешение."
+     },
+     { 
+      "phrase": "согласитесь, сейчас человеку можно надоесть даже очень хорошим отношением к нему"
+     },
+     { 
+      "phrase": "Когда дед задул 90 свечей с первого раза, внуки поняли, что трёшка в центре Москвы освободится не скоро."
+     },
+     { 
+      "phrase": "Самое трудное по утрам - это не уснуть после того, как выключишь будильник"
+     },
+     { 
+      "phrase": "Быть мальчиком - вопрос пола. Быть мужчиной - вопрос возраста. Быть джентльменом - вопрос выбора. Быть мудаком - вообще не вопрос."
+     },
+     { 
+      "phrase": "Институт научил меня многому — я научился врать так, что сам верю в то, что говорю"
+     },
+     { 
+      "phrase": "В Деда Мороза верится больше, чем в работу по специальности."
+     },
+     { 
+      "phrase": "Счастье это когда завидуют, а нагадить не могут"
+     },
+     { 
+      "phrase": "Твои мысли - единственная причина того, что происходит и единственный способ дальнейших изменений"
+     },
+     { 
+      "phrase": "Если ты будешь усердно работать по 8 часов в день, то обязательно станешь боссом и начнешь работать по 12"
+     }
 
-		]
-		</script>
-		<script>
-		$(document).ready(function(){
-			var items = JSON.parse($("#quotes_json").html());
-		  var item = items[Math.floor(Math.random()*items.length)];
-			$("#joke").text(item.phrase);
-			if (typeof item.signature !== 'undefined') {
-				$("#signature").text(item.signature);
-			}
-			else {
-				$("#signature").remove();
-			}
-		});
-  	</script>
+    ]
+  </script>
+  <script>
+    $(document).ready(function(){
+      var items = JSON.parse($("#quotes_json").html());
+      var item = items[Math.floor(Math.random()*items.length)];
+        $("#joke").text(item.phrase);
+        if (typeof item.signature !== 'undefined') {
+          $("#signature").text(item.signature);
+        }
+        else {
+          $("#signature").remove();
+        }
+    });
+  </script>
 </body>
 </html>
